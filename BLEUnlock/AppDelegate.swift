@@ -170,6 +170,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
         let file = directory.appendingPathComponent("event")
         let process = Process()
         process.executableURL = file
+        print("runScript")
+        print(directory)
+        print(file)
+        print(lastRSSI)
         if let r = lastRSSI {
             process.arguments = [arg, String(r)]
         } else {
@@ -285,6 +289,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
         guard !systemSleep else { return }
         guard !displaySleep else { return }
         print("tryUnlockScreen")
+        unlockScreen()
+    }
+    
+    func unlockScreen(_ gardValue: Bool = true) {
         if inScreensaver {
             // In screensaver, make sure Login panel is displayed
             let src = CGEventSource(stateID: .hidSystemState)
@@ -293,13 +301,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
             CGEvent(keyboardEventSource: src, virtualKey: 0x35, keyDown: false)?.post(tap: .cghidEventTap)
         }
 
-        guard !self.prefs.bool(forKey: "wakeWithoutUnlocking") else { return }
+        guard gardValue && !self.prefs.bool(forKey: "wakeWithoutUnlocking") else { return }
 
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             print("tryUnlockScreen in timer")
             guard self.isScreenLocked() else { return }
             guard let password = self.fetchPassword(warn: true) else { return }
-            print("tryUnlockScreen get pwd")
+            print("tryUnlockScreen get pwd: \(password)")
             print("Entering password")
             self.unlockedAt = Date().timeIntervalSince1970
             self.fakeKeyStrokes(password)
@@ -764,12 +772,35 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
             }
         }
 
-        server["/magic"] = {
+        server["/magic"] = { _ in
             print("magic")
             self.ble.turnOnAndUncluck()
-            return .ok(.htmlBody("You asked for " + $0.path))
+            self.unlockScreen(false)
+            var isLocked = "fale"
+            if self.isScreenLocked() {
+                isLocked = "true"
+                self.httpRequest()
+            }
+            return .ok(.htmlBody(isLocked))
         }
         return server
+    }
+    func httpRequest() {
+        let url = URL(string: "http://127.0.0.1:9087/unlock")! // note, https, not http
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                error == nil,
+                let data = data,
+                let string = String(data: data, encoding: .utf8)
+            else {
+                print(error ?? "Unknown error")
+                return
+            }
+
+            print(string)
+        }
+        task.resume()
     }
     
 }
