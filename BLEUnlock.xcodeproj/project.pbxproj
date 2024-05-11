@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,11 @@
 		3DD4B664226C1CF000451B7B /* lowlevel.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4B663226C1CF000451B7B /* lowlevel.c */; };
 		3DD4B666226C1DF200451B7B /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4B665226C1DF200451B7B /* BLE.swift */; };
 		3DD4B669226C1E3700451B7B /* login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD4B668226C1E3700451B7B /* login.framework */; };
+		A870FFFCB577B73421EEE261 /* Pods_BLEUnlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67E5A61AD8036D9B7FEFCF5 /* Pods_BLEUnlock.framework */; };
+		E84F50BA2BEF186A00694BB7 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F50B92BEF186A00694BB7 /* Swifter.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E84F50BC2BEF18A400694BB7 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F50BB2BEF18A400694BB7 /* Swifter.framework */; };
+		E84F50BE2BEF18CC00694BB7 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F50BD2BEF18CC00694BB7 /* Swifter.framework */; };
+		F721A65F95D099DD0E28EE3C /* Pods_Launcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187449CAD2D2D29368E145FA /* Pods_Launcher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17AA2E0D112A3F0E3FFDD589 /* Pods-BLEUnlock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEUnlock.debug.xcconfig"; path = "Target Support Files/Pods-BLEUnlock/Pods-BLEUnlock.debug.xcconfig"; sourceTree = "<group>"; };
+		187449CAD2D2D29368E145FA /* Pods_Launcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Launcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2CF85A255102B300157996 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = ../../../../System/Library/PrivateFrameworks/MediaRemote.framework; sourceTree = "<group>"; };
 		3D2FCF07226C99CB007A06E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D43D0112765FCCB00D15991 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AboutBox.strings; sourceTree = "<group>"; };
@@ -75,8 +82,15 @@
 		3DD4B663226C1CF000451B7B /* lowlevel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lowlevel.c; sourceTree = "<group>"; };
 		3DD4B665226C1DF200451B7B /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		3DD4B668226C1E3700451B7B /* login.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = login.framework; path = ../../../../System/Library/PrivateFrameworks/login.framework; sourceTree = "<group>"; };
+		7729C9828F68ADF4DFE4A8BC /* Pods-Launcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launcher.release.xcconfig"; path = "Target Support Files/Pods-Launcher/Pods-Launcher.release.xcconfig"; sourceTree = "<group>"; };
+		9A6C1FBFBECEFB3F0374B401 /* Pods-Launcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launcher.debug.xcconfig"; path = "Target Support Files/Pods-Launcher/Pods-Launcher.debug.xcconfig"; sourceTree = "<group>"; };
+		A67E5A61AD8036D9B7FEFCF5 /* Pods_BLEUnlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEUnlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADABFA880BAF1A206BBEE828 /* Pods-BLEUnlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEUnlock.release.xcconfig"; path = "Target Support Files/Pods-BLEUnlock/Pods-BLEUnlock.release.xcconfig"; sourceTree = "<group>"; };
 		B1EFF91422E010F50010DB0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AboutBox.strings"; sourceTree = "<group>"; };
 		B1EFF91622E010F50010DB0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E84F50B92BEF186A00694BB7 /* Swifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E84F50BB2BEF18A400694BB7 /* Swifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E84F50BD2BEF18CC00694BB7 /* Swifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749D28C277515C600C78C28 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AboutBox.strings; sourceTree = "<group>"; };
 		F749D28D277515C600C78C28 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84F50BE2BEF18CC00694BB7 /* Swifter.framework in Frameworks */,
+				E84F50BC2BEF18A400694BB7 /* Swifter.framework in Frameworks */,
+				F721A65F95D099DD0E28EE3C /* Pods_Launcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,8 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84F50BA2BEF186A00694BB7 /* Swifter.framework in Frameworks */,
 				3D2CF85B255102B300157996 /* MediaRemote.framework in Frameworks */,
 				3DD4B669226C1E3700451B7B /* login.framework in Frameworks */,
+				A870FFFCB577B73421EEE261 /* Pods_BLEUnlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +141,7 @@
 				3D600A4122701A5B0068FB7B /* Launcher */,
 				3DD4B651226C1C3200451B7B /* Products */,
 				3DD4B667226C1E3700451B7B /* Frameworks */,
+				5CDC14B1B9512E105582C1DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,10 +179,26 @@
 		3DD4B667226C1E3700451B7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E84F50BD2BEF18CC00694BB7 /* Swifter.framework */,
+				E84F50BB2BEF18A400694BB7 /* Swifter.framework */,
+				E84F50B92BEF186A00694BB7 /* Swifter.framework */,
 				3D2CF85A255102B300157996 /* MediaRemote.framework */,
 				3DD4B668226C1E3700451B7B /* login.framework */,
+				A67E5A61AD8036D9B7FEFCF5 /* Pods_BLEUnlock.framework */,
+				187449CAD2D2D29368E145FA /* Pods_Launcher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CDC14B1B9512E105582C1DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17AA2E0D112A3F0E3FFDD589 /* Pods-BLEUnlock.debug.xcconfig */,
+				ADABFA880BAF1A206BBEE828 /* Pods-BLEUnlock.release.xcconfig */,
+				9A6C1FBFBECEFB3F0374B401 /* Pods-Launcher.debug.xcconfig */,
+				7729C9828F68ADF4DFE4A8BC /* Pods-Launcher.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D600A4B22701A5C0068FB7B /* Build configuration list for PBXNativeTarget "Launcher" */;
 			buildPhases = (
+				8D9B6990D7EF83D79396D600 /* [CP] Check Pods Manifest.lock */,
 				3D600A3C22701A5A0068FB7B /* Sources */,
 				3D600A3D22701A5A0068FB7B /* Frameworks */,
 				3D600A3E22701A5A0068FB7B /* Resources */,
@@ -189,11 +226,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DD4B65E226C1C3400451B7B /* Build configuration list for PBXNativeTarget "BLEUnlock" */;
 			buildPhases = (
+				21F8740589A7A5CF36CB98CA /* [CP] Check Pods Manifest.lock */,
 				3DD4B64C226C1C3200451B7B /* Sources */,
 				3DD4B64D226C1C3200451B7B /* Frameworks */,
 				3DD4B64E226C1C3200451B7B /* Resources */,
 				3D600A5922701E5D0068FB7B /* CopyFiles */,
 				3D7C0F8022769F1F005A4C43 /* ShellScript */,
+				5B8477864B8581AABE016675 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +331,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21F8740589A7A5CF36CB98CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BLEUnlock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3D7C0F8022769F1F005A4C43 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +369,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		5B8477864B8581AABE016675 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BLEUnlock/Pods-BLEUnlock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BLEUnlock/Pods-BLEUnlock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLEUnlock/Pods-BLEUnlock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D9B6990D7EF83D79396D600 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Launcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -381,12 +481,15 @@
 /* Begin XCBuildConfiguration section */
 		3D600A4C22701A5C0068FB7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A6C1FBFBECEFB3F0374B401 /* Pods-Launcher.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 42LGPQYC7M;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 9MM75DE52S;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Launcher/Info.plist;
 				INSTALL_PATH = "";
@@ -404,6 +507,7 @@
 		};
 		3D600A4D22701A5C0068FB7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7729C9828F68ADF4DFE4A8BC /* Pods-Launcher.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -546,22 +650,27 @@
 		};
 		3DD4B65F226C1C3400451B7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17AA2E0D112A3F0E3FFDD589 /* Pods-BLEUnlock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BLEUnlock/BLEUnlock.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 42LGPQYC7M;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 9MM75DE52S;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BLEUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sone.BLEUnlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -577,22 +686,26 @@
 		};
 		3DD4B660226C1C3400451B7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADABFA880BAF1A206BBEE828 /* Pods-BLEUnlock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BLEUnlock/BLEUnlock.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 42LGPQYC7M;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 9MM75DE52S;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BLEUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sone.BLEUnlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

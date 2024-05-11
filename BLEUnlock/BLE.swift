@@ -184,7 +184,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         scanForPeripherals()
     }
 
-    func resetSignalTimer() {
+func resetSignalTimer() {
         signalTimer?.invalidate()
         signalTimer = Timer.scheduledTimer(withTimeInterval: signalTimeout, repeats: false, block: { _ in
             print("Device is lost")
@@ -261,6 +261,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             print("Proximity timer started")
         }
         resetSignalTimer()
+    }
+    
+    func turnOnAndUncluck() {
+            print("turnOnAndUncluck is close")
+            delegate?.updatePresence(presence: true, reason: "close")
     }
 
     func resetScanTimer(device: Device) {

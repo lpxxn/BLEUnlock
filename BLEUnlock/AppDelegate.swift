@@ -1,6 +1,7 @@
 import Cocoa
 import Quartz
 import ServiceManagement
+import Swifter
 
 func t(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
@@ -283,7 +284,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
         guard ble.unlockRSSI != ble.UNLOCK_DISABLED else { return }
         guard !systemSleep else { return }
         guard !displaySleep else { return }
-
+        print("tryUnlockScreen")
         if inScreensaver {
             // In screensaver, make sure Login panel is displayed
             let src = CGEventSource(stateID: .hidSystemState)
@@ -295,9 +296,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
         guard !self.prefs.bool(forKey: "wakeWithoutUnlocking") else { return }
 
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            print("tryUnlockScreen in timer")
             guard self.isScreenLocked() else { return }
             guard let password = self.fetchPassword(warn: true) else { return }
-            
+            print("tryUnlockScreen get pwd")
             print("Entering password")
             self.unlockedAt = Date().timeIntervalSince1970
             self.fakeKeyStrokes(password)
@@ -729,8 +731,45 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSMenuItemVa
         // This is required because we can't have LSUIElement set to true in Info.plist,
         // otherwise CBCentralManager.scanForPeripherals won't work.
         NSApp.setActivationPolicy(.accessory)
+        
+        do {
+            let port: in_port_t  = 9086
+            let server = demoServer(Bundle.main.resourcePath!)
+            try server.start(port)
+            print("Starting server at port \(port) 🚀.")
+            self.server = server
+        } catch {
+            print("Server start error: \(error)")
+        }
+        print("success run")
     }
     
+    private var server: HttpServer?
+
     func applicationWillTerminate(_ aNotification: Notification) {
     }
+    public func demoServer(_ publicDir: String) -> HttpServer {
+        print(publicDir)
+
+        let server = HttpServer()
+        server["/"] = scopes {
+            html {
+                body {
+                    ul(server.routes) { service in
+                        li {
+                            a { href = service; inner = service }
+                        }
+                    }
+                }
+            }
+        }
+
+        server["/magic"] = {
+            print("magic")
+            self.ble.turnOnAndUncluck()
+            return .ok(.htmlBody("You asked for " + $0.path))
+        }
+        return server
+    }
+    
 }
